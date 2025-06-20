@@ -55,4 +55,53 @@ async function main(): Promise<void> {
     const seenTopics = new Set<string>();
 
     for (const { tag, topic } of mappings) {
-      if
+      if (seenTopics.has(topic)) continue;
+      seenTopics.add(topic);
+
+      client.subscribe(topic, (err, granted) => {
+        if (err) {
+          console.error(`❌ Subscribe failed for "${topic}":`, err.message);
+        } else {
+          console.log(`📡 Subscribed to "${topic}" [QoS ${granted?.[0]?.qos ?? "?"}]`);
+        }
+      });
+
+      const initMsg = JSON.stringify({ tag, init: new Date().toISOString(), value: null });
+      client.publish(topic, initMsg, { qos: 1, retain: true }, err => {
+        if (err) {
+          console.error(`❌ Publish failed for "${topic}":`, err.message);
+        } else {
+          console.log(`📤 Retained init for "${topic}"`);
+        }
+      });
+    }
+  });
+
+  client.on("message", (topic: string, buf: Buffer) => {
+    if (!topic) {
+      console.warn("⚠️ Received message with undefined topic");
+      return;
+    }
+    const raw = buf.toString();
+    let payload: any;
+    try {
+      payload = JSON.parse(raw);
+    } catch {
+      payload = raw;
+    }
+
+    const mapping = mappings.find(m => m.topic === topic);
+    const tag = mapping?.tag ?? topic;
+    console.log(`📝 [${tag}] ${topic} →`, payload);
+  });
+
+  client.on("error", err => {
+    console.error("❌ MQTT error:", err.message);
+  });
+}
+
+main().catch(err => {
+  console.error("❌ Fatal error:", err);
+  process.exit(1);
+});
+
