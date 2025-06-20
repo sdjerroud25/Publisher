@@ -1,0 +1,6 @@
+[
+{ "tag": "HMI_GVL.M.Rob2.MACTTORQUE [1]", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Robot_Torque/1" }, 
+{ "tag": "HMI_GVL.M.Rob2.MACTTORQUE [2]", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Robot_Torque/2" }, 
+{ "tag": "HMI_GVL.M.Rob2.MACTTORQUE [3]", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Robot_Torque/3" }, 
+{ "tag": "HMI_GVL.M.Rob2.MACTTORQUE [4]", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Robot_Torque/4" }
+]

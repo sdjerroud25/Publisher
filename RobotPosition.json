@@ -1,0 +1,7 @@
+[
+   { "tag": "HMI_GVL.M.Rob2.ROBOTPOS.X", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Robot_Position/X" },  
+   { "tag": "HMI_GVL.M.Rob2.ROBOTPOS.Y", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Robot_Position/Y" },
+   { "tag": "HMI_GVL.M.Rob2.ROBOTPOS.Z", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Robot_Position/Z" },
+   { "tag": "HMI_GVL.M.Rob2.ROBOTPOS.W", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Robot_Position/W" }
+]
+

@@ -1,0 +1,9 @@
+[
+
+{ "tag": "HMI_GVL.M.INITIALIZED", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Machine_Status/initialized" },  
+{ "tag": "HMI_GVL.M.RUNNING", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Machine_Status/running" },  
+{ "tag": "HMI_GVL.M.PAUSED", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Machine_Status/paused" },  
+{ "tag": "HMI_GVL.M.SAFETY_ENABLE", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Machine_Status/safety_enable" },  
+{ "tag": "HMI_GVL.M.FINISHEDPARTNUM", "topic": "m/conestoga/recycling/team3/line/sorter/R3/Machine_Status/finishedPartNum" }
+
+]
